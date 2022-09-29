@@ -1,0 +1,96 @@
+mysql> create database hrms;
+Query OK, 1 row affected (0.17 sec)
+
+mysql> create table admin
+    -> (
+    -> id int primary key auto_increment,
+    -> password varchar(25) binary unique not null,
+    -> name varchar(25) not null,
+    -> email varchar(35) unique not null
+    -> );
+Query OK, 0 rows affected, 1 warning (0.52 sec)
+
+mysql>  insert into admin(password,name,email) values('rishabh123','rishabh','rishabh@gmail.com');
+Query OK, 1 row affected (0.19 sec)
+
+mysql>  insert into admin(password,name,email) values('mansi123','mansi','mansi@gmail.com');
+Query OK, 1 row affected (0.05 sec)
+
+mysql>  insert into admin(password,name,email) values('anand123','anand','anand@gmail.com');
+Query OK, 1 row affected (0.05 sec)
+
+mysql>  insert into admin(password,name,email) values('kapil123','kapil','kapil@gmail.com');
+Query OK, 1 row affected (0.09 sec)
+
+mysql>  insert into admin(password,name,email) values('harshit123','harshit','harshit@gmail.com');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from admin;
++----+------------+---------+-------------------+
+| id | password   | name    | email             |
++----+------------+---------+-------------------+
+|  1 | rishabh123 | rishabh | rishabh@gmail.com |
+|  2 | mansi123   | mansi   | mansi@gmail.com   |
+|  3 | anand123   | anand   | anand@gmail.com   |
+|  4 | kapil123   | kapil   | kapil@gmail.com   |
+|  5 | harshit123 | harshit | harshit@gmail.com |
++----+------------+---------+-------------------+
+5 rows in set (0.07 sec)
+
+mysql>  create table department
+    ->  (
+    ->  depId int primary key auto_increment,
+    ->  depName varchar(50) not null
+    ->  );
+Query OK, 0 rows affected (0.37 sec)
+
+mysql> insert into department(depName) values ('hr');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into department(depName) values ('Sales');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into department(depName) values ('Marketing');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into department(depName) values ('IT');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from department;
++-------+-----------+
+| depId | depName   |
++-------+-----------+
+|     1 | hr        |
+|     2 | Sales     |
+|     3 | Marketing |
+|     4 | IT        |
++-------+-----------+
+4 rows in set (0.00 sec)
+
+mysql>  create table employee
+    ->  (
+    ->  empId int primary key auto_increment,
+    ->  empName varchar(35) not null,
+    ->  empSalary double(9,2) not null,
+    ->  empRole varchar(35) not null,
+    ->  empPassword varchar(35) binary  unique not null ,
+    ->  empEmail varchar(50) unique not null,
+    ->  did int,
+    ->  FOREIGN KEY(did) References department(depId)
+    ->  ON DELETE CASCADE
+    ->  );
+Query OK, 0 rows affected, 2 warnings (0.28 sec)
+
+mysql> desc employee;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| empId       | int         | NO   | PRI | NULL    | auto_increment |
+| empName     | varchar(35) | NO   |     | NULL    |                |
+| empSalary   | double(9,2) | NO   |     | NULL    |                |
+| empRole     | varchar(35) | NO   |     | NULL    |                |
+| empPassword | varchar(35) | NO   | UNI | NULL    |                |
+| empEmail    | varchar(50) | NO   | UNI | NULL    |                |
+| did         | int         | YES  | MUL | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+7 rows in set (0.29 sec)
