@@ -77,9 +77,9 @@ mysql>  create table employee
     ->  empEmail varchar(50) unique not null,
     ->  did int,
     ->  FOREIGN KEY(did) References department(depId)
-    ->  ON DELETE CASCADE
+    ->  ON DELETE CASCADE ON UPDATE CASCADE
     ->  );
-Query OK, 0 rows affected, 2 warnings (0.28 sec)
+Query OK, 0 rows affected, 2 warnings (1.69 sec)
 
 mysql> desc employee;
 +-------------+-------------+------+-----+---------+----------------+
@@ -94,3 +94,39 @@ mysql> desc employee;
 | did         | int         | YES  | MUL | NULL    |                |
 +-------------+-------------+------+-----+---------+----------------+
 7 rows in set (0.29 sec)
+
+mysql> insert into employee(empName,empSalary,empRole,empPassword,empEmail,did) values('Virat',30000,'tester','virat123','virat@gmail.com',3);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into employee(empName,empSalary,empRole,empPassword,empEmail,did) values('rohit',18000,'analyst','rohit123','rohit@gmail.com',3);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into employee(empName,empSalary,empRole,empPassword,empEmail,did) values('Dhoni',40000,'developer','dhoni123','dhoni@gmail.com',4);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> insert into employee(empName,empSalary,empRole,empPassword,empEmail,did) values('Hardik',35000,'HR','hardik123','hardik@gmail.com',2);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from employee;
++-------+---------+-----------+-----------+-------------+------------------+------+
+| empId | empName | empSalary | empRole   | empPassword | empEmail         | did  |
++-------+---------+-----------+-----------+-------------+------------------+------+
+|     1 | Virat   |  30000.00 | tester    | virat123    | virat@gmail.com  |    3 |
+|     2 | rohit   |  18000.00 | analyst   | rohit123    | rohit@gmail.com  |    3 |
+|     3 | Dhoni   |  40000.00 | developer | dhoni123    | dhoni@gmail.com  |    4 |
+|     4 | Hardik  |  35000.00 | HR        | hardik123   | hardik@gmail.com |    2 |
++-------+---------+-----------+-----------+-------------+------------------+------+
+4 rows in set (0.01 sec)
+
+mysql> create table leaveTable
+ (
+ leaveNum int primary key auto_increment,
+ emplName varchar(35) not null,
+ leaveDura int,
+ reason varchar(255),
+ permission varchar(255),
+ empId int unique,
+ FOREIGN KEY(leaveNum) references employee(empId)
+ ON DELETE CASCADE ON UPDATE CASCADE
+ );
+Query OK, 0 rows affected, 2 warnings (1.69 sec)
