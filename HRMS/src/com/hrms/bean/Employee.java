@@ -38,6 +38,24 @@ public class Employee {
 		this.empEmail = empEmail;
 	}
 
+	public Employee(int empId, String empName, String empSalary, String empRole, String deptId) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.empSalary = empSalary;
+		this.empRole = empRole;
+		this.deptId = deptId;
+
+	}
+
+	public Employee(int empId, String empName, String empPassword, String empEmail) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.empPassword = empPassword;
+		this.empEmail = empEmail;
+	}
+
 	public int getEmpId() {
 		return empId;
 	}

@@ -21,7 +21,7 @@ public class DBUtil {
 		try {
 			conn = DriverManager.getConnection(url, "root", "root");
 		} catch (SQLException e) {
-			System.out.println("not connected!");
+			System.out.println("Something Went Wrong..!");
 		}
 
 		return conn;
