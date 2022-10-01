@@ -3,12 +3,13 @@ package com.hrms.usecase;
 import com.hrms.dao.AdminDao;
 import com.hrms.dao.AdminDaoImpl;
 
-public class TransferEmployee {
+public class LeaveRespond {
 
-	public void transferEmp() {
+	public void leaveRespond() {
 
 		AdminDao ad = new AdminDaoImpl();
-		System.out.println(ad.transferEmployee());
+		ad.respontToLeaveRequest();
 
 	}
+
 }

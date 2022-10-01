@@ -3,35 +3,11 @@ package com.hrms.bean;
 public class Leave {
 
 	private String leaveNum;
-	private String Name;
+	private String name;
 	private String duration;
 	private String reason;
 	private String permission;
 	private String empId;
-
-	public Leave() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Leave(String leaveNum, String name, String duration, String reason, String permission, String empId) {
-		super();
-		this.leaveNum = leaveNum;
-		Name = name;
-		this.duration = duration;
-		this.reason = reason;
-		this.permission = permission;
-		this.empId = empId;
-	}
-
-	public Leave(String leaveNum, String name, String duration, String reason, String empId) {
-		super();
-		this.leaveNum = leaveNum;
-		Name = name;
-		this.duration = duration;
-		this.reason = reason;
-
-		this.empId = empId;
-	}
 
 	public String getLeaveNum() {
 		return leaveNum;
@@ -42,11 +18,11 @@ public class Leave {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getDuration() {
@@ -78,6 +54,30 @@ public class Leave {
 	}
 
 	public void setEmpId(String empId) {
+		this.empId = empId;
+	}
+
+	public Leave() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Leave(String leaveNum, String name, String duration, String reason, String permission, String empId) {
+		super();
+		this.leaveNum = leaveNum;
+		this.name = name;
+		this.duration = duration;
+		this.reason = reason;
+		this.permission = permission;
+		this.empId = empId;
+	}
+
+	public Leave(String leaveNum, String name, String duration, String reason, String empId) {
+		super();
+		this.leaveNum = leaveNum;
+		this.name = name;
+		this.duration = duration;
+		this.reason = reason;
+
 		this.empId = empId;
 	}
 

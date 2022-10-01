@@ -7,7 +7,7 @@ import com.hrms.dao.AdminDaoImpl;
 
 public class AddEmployee {
 
-public static void main(String[] args) {
+		public void addemp() {
 		
 		AdminDaoImpl adi = new AdminDaoImpl();
 		Scanner s = new Scanner(System.in);
@@ -23,5 +23,6 @@ public static void main(String[] args) {
 		String res = adi.addEmployee(emp);
 		System.out.println(res);
 		
+	
 	}
 }

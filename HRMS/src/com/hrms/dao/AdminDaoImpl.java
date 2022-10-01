@@ -33,11 +33,11 @@ public class AdminDaoImpl implements AdminDao {
 		this.pass = pass;
 		this.email = email;
 	}
-	
+
 	@Override
 	public String updateProfile(Admin admin) {
 
-		String message = "Not Updated";
+		String message = "Profile Not Updated";
 
 		try (Connection conn = DBUtil.connection()) {
 
@@ -53,7 +53,7 @@ public class AdminDaoImpl implements AdminDao {
 			int i = ps.executeUpdate();
 
 			if (i > 0) {
-				message = "Updated Successfully";
+				message = "Profile Updated Successfully";
 			}
 
 		} catch (SQLException e) {
@@ -114,7 +114,7 @@ public class AdminDaoImpl implements AdminDao {
 
 			int x = ps.executeUpdate();
 			if (x > 0) {
-				message = "Employee Successfully Inserted";
+				message = "Employee Inserted Successfully";
 			}
 
 			PreparedStatement ps2 = conn.prepareStatement("SELECT empId FROM employee where empPassword = ?");
@@ -146,7 +146,7 @@ public class AdminDaoImpl implements AdminDao {
 
 	public String addDepartment(String deptId, String deptName) {
 
-		String message = "Not Added";
+		String message = "Department Not Added";
 
 		try (Connection conn = DBUtil.connection()) {
 
@@ -169,7 +169,7 @@ public class AdminDaoImpl implements AdminDao {
 
 	public String updateDepartment(String name) {
 
-		String message = "Not Updated";
+		String message = "Department Not Updated";
 		boolean flag = true;
 		String id = null;
 		while (flag) {
@@ -391,6 +391,55 @@ public class AdminDaoImpl implements AdminDao {
 		}
 
 		return list;
+	}
+
+	public void respontToLeaveRequest() {
+		boolean flag = true;
+		while (flag) {
+			String id = Verify.checkEmpId();
+
+			try (Connection conn = DBUtil.connection()) {
+
+				PreparedStatement ps = conn.prepareStatement(
+						"SELECT * FROM leaveTable WHERE empId = ? AND reason IS NOT null AND permission IS null");
+				ps.setInt(1, Integer.parseInt(id));
+
+				ResultSet rs = ps.executeQuery();
+
+				if (rs.next()) {
+					flag = false;
+
+					try (Connection conn2 = DBUtil.connection()) {
+
+						Scanner s = new Scanner(System.in);
+						System.out.println("Enter accepted or rejected with message ");
+						String mess = s.nextLine();
+						PreparedStatement ps2 = conn2
+								.prepareStatement("UPDATE leaveTable SET permission = ? WHERE empid = ?");
+						ps2.setString(1, mess);
+						ps2.setInt(2, Integer.parseInt(id));
+
+						int x = ps2.executeUpdate();
+						if (x > 0) {
+							System.out.println("Responded!");
+						} else {
+							System.out.println("Something went wrong");
+						}
+
+					} catch (SQLException e) {
+						System.out.println(e.getMessage());
+					}
+
+				} else {
+					System.out.println("No record found with this Employee Id");
+				}
+
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+
+		}
+
 	}
 
 }

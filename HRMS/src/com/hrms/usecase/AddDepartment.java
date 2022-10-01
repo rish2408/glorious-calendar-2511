@@ -6,7 +6,7 @@ import com.hrms.dao.AdminDaoImpl;
 
 public class AddDepartment {
 
-	public static void main(String[] args) {
+	public void addDepartment() {
 
 		Scanner s = new Scanner(System.in);
 		String deptid = Verify.checkDeptid();
