@@ -9,7 +9,7 @@ import com.hrms.exception.DepartmentException;
 
 public class GetAllDepartments {
 
-	public static void main(String[] args) {
+	public void getAllDept() {
 
 		AdminDao ad = new AdminDaoImpl();
 
@@ -20,8 +20,8 @@ public class GetAllDepartments {
 
 				for (Department d : list) {
 
-					System.out.println("Department Id is :  " + d.getDepId());
-					System.out.println("Department Name is :  " + d.getDepName());
+					System.out.println("Department Id is => " + d.getDepId());
+					System.out.println("Department Name is => " + d.getDepName());
 					System.out.println("=======================================");
 
 				}

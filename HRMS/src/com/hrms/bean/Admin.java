@@ -6,17 +6,6 @@ public class Admin {
 	private String password;
 	private String email;
 
-	Admin() {
-
-	}
-
-	public Admin(String name, String password, String email) {
-		super();
-		this.name = name;
-		this.password = password;
-		this.email = email;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -38,6 +27,17 @@ public class Admin {
 	}
 
 	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	Admin() {
+
+	}
+
+	public Admin(String name, String password, String email) {
+		super();
+		this.name = name;
+		this.password = password;
 		this.email = email;
 	}
 

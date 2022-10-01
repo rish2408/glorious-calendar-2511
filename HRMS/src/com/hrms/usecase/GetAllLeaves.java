@@ -9,18 +9,18 @@ import com.hrms.exception.LeaveException;
 
 public class GetAllLeaves {
 
-	public static void main(String[] args) {
+	public void getAllLeaves() {
 		AdminDao ad = new AdminDaoImpl();
 
 		try {
 			List<Leave> list = ad.getAllLeavesRequest();
 
 			for (Leave l : list) {
-				System.out.println("Leave Number is :  " + l.getLeaveNum());
-				System.out.println("Employee Id is :  " + l.getEmpId());
-				System.out.println("Employee Name is :  " + l.getName());
-				System.out.println("Leave Duration in days :  " + l.getDuration());
-				System.out.println("Leave Reason :  " + l.getReason());
+				System.out.println("Leave Number is => " + l.getLeaveNum());
+				System.out.println("Employee Id is => " + l.getEmpId());
+				System.out.println("Employee Name is => " + l.getName());
+				System.out.println("Leave Duration in days => " + l.getDuration());
+				System.out.println("Leave Reason => " + l.getReason());
 				System.out.println("=================================================");
 			}
 

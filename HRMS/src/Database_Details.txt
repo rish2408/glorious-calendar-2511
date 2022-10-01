@@ -10,19 +10,19 @@ mysql> create table admin
     -> );
 Query OK, 0 rows affected, 1 warning (0.52 sec)
 
-mysql>  insert into admin(password,name,email) values('rishabh123','rishabh','rishabh@gmail.com');
+mysql>  insert into admin(password,name,email) values('rishabh@123','rishabh','rishabh$@gmail.com');
 Query OK, 1 row affected (0.19 sec)
 
-mysql>  insert into admin(password,name,email) values('mansi123','mansi','mansi@gmail.com');
+mysql>  insert into admin(password,name,email) values('mansi@123','mansi','mansi$@gmail.com');
 Query OK, 1 row affected (0.05 sec)
 
-mysql>  insert into admin(password,name,email) values('anand123','anand','anand@gmail.com');
+mysql>  insert into admin(password,name,email) values('anand@123','anand','anand$@gmail.com');
 Query OK, 1 row affected (0.05 sec)
 
-mysql>  insert into admin(password,name,email) values('kapil123','kapil','kapil@gmail.com');
+mysql>  insert into admin(password,name,email) values('kapil@123','kapil','kapil$@gmail.com');
 Query OK, 1 row affected (0.09 sec)
 
-mysql>  insert into admin(password,name,email) values('harshit123','harshit','harshit@gmail.com');
+mysql>  insert into admin(password,name,email) values('harshit@123','harshit','harshit$@gmail.com');
 Query OK, 1 row affected (0.07 sec)
 
 mysql> select * from admin;

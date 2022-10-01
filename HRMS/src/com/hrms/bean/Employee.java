@@ -10,52 +10,6 @@ public class Employee {
 	private String empPassword;
 	private String empEmail;
 
-	public Employee() {
-
-	}
-
-	public Employee(int empId, String empName, String empSalary, String empRole, String empPassword, String empEmail,
-			String deptId) {
-		super();
-		this.empId = empId;
-		this.empName = empName;
-		this.empSalary = empSalary;
-		this.empRole = empRole;
-		this.deptId = deptId;
-		this.empPassword = empPassword;
-		this.empEmail = empEmail;
-	}
-
-	public Employee(String empName, String empSalary, String empRole, String empPassword, String empEmail,
-			String deptId) {
-		super();
-
-		this.empName = empName;
-		this.empSalary = empSalary;
-		this.empRole = empRole;
-		this.deptId = deptId;
-		this.empPassword = empPassword;
-		this.empEmail = empEmail;
-	}
-
-	public Employee(int empId, String empName, String empSalary, String empRole, String deptId) {
-		super();
-		this.empId = empId;
-		this.empName = empName;
-		this.empSalary = empSalary;
-		this.empRole = empRole;
-		this.deptId = deptId;
-
-	}
-
-	public Employee(int empId, String empName, String empPassword, String empEmail) {
-		super();
-		this.empId = empId;
-		this.empName = empName;
-		this.empPassword = empPassword;
-		this.empEmail = empEmail;
-	}
-
 	public int getEmpId() {
 		return empId;
 	}
@@ -109,6 +63,52 @@ public class Employee {
 	}
 
 	public void setEmpEmail(String empEmail) {
+		this.empEmail = empEmail;
+	}
+
+	public Employee() {
+
+	}
+
+	public Employee(int empId, String empName, String empSalary, String empRole, String empPassword, String empEmail,
+			String deptId) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.empSalary = empSalary;
+		this.empRole = empRole;
+		this.deptId = deptId;
+		this.empPassword = empPassword;
+		this.empEmail = empEmail;
+	}
+
+	public Employee(String empName, String empSalary, String empRole, String empPassword, String empEmail,
+			String deptId) {
+		super();
+
+		this.empName = empName;
+		this.empSalary = empSalary;
+		this.empRole = empRole;
+		this.deptId = deptId;
+		this.empPassword = empPassword;
+		this.empEmail = empEmail;
+	}
+
+	public Employee(int empId, String empName, String empSalary, String empRole, String deptId) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.empSalary = empSalary;
+		this.empRole = empRole;
+		this.deptId = deptId;
+
+	}
+
+	public Employee(int empId, String empName, String empPassword, String empEmail) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.empPassword = empPassword;
 		this.empEmail = empEmail;
 	}
 

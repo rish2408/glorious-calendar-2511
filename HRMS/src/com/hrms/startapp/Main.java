@@ -6,6 +6,7 @@ public class Main {
 
 		System.out.println("===================Welcome to Human Resource Management System====================\n");
 		AdminOrEmployee.choice();
+		System.out.println("Thanks For Visiting...");
 
 	}
 }

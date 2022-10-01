@@ -30,4 +30,6 @@ public interface AdminDao {
 	public List<Employee> getAllEmployees() throws EmployeeException;
 
 	public List<Leave> getAllLeavesRequest() throws LeaveException;
+	
+	public void respontToLeaveRequest();
 }

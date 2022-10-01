@@ -5,16 +5,6 @@ public class Department {
 	private int depId;
 	private String depName;
 
-	public Department() {
-
-	}
-
-	public Department(int depId, String depName) {
-		super();
-		this.depId = depId;
-		this.depName = depName;
-	}
-
 	public int getDepId() {
 		return depId;
 	}
@@ -28,6 +18,16 @@ public class Department {
 	}
 
 	public void setDepName(String depName) {
+		this.depName = depName;
+	}
+
+	public Department() {
+
+	}
+
+	public Department(int depId, String depName) {
+		super();
+		this.depId = depId;
 		this.depName = depName;
 	}
 }

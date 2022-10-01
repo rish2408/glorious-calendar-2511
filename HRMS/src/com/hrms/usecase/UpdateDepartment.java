@@ -6,7 +6,7 @@ import com.hrms.dao.AdminDaoImpl;
 
 public class UpdateDepartment {
 
-	public static void main(String[] args) {
+	public void updateDept() {
 
 		Scanner s = new Scanner(System.in);
 
